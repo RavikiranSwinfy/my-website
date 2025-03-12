@@ -96,7 +96,7 @@ nav ul li a {
     border-radius: 10px;
 }
 
-/* Flexbox layout for the container */
+/* Keep container layout fixed */
 .container {
     display: flex;
     justify-content: space-between;
@@ -132,14 +132,14 @@ nav ul li a {
     color: #666;
 }
 
+/* Keep service cards in two rows */
 .services-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 30px;
+    justify-content: space-around;
+    gap: 20px;
 }
 
-/* Service Cards */
 .card, .card2 {
     background-color: white;
     border-radius: 10px;
@@ -168,12 +168,12 @@ nav ul li a {
 
 .card a, .card2 a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-/* Hover Effect */
+/* Hover effect */
 .card:hover, .card2:hover {
     transform: translateY(-10px);
     background-color: #83b9f7;
@@ -183,52 +183,37 @@ nav ul li a {
     color: #FFAA00;
 }
 
-/* Smooth scroll behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-/* ------------------------------------------- */
-/* RESPONSIVE DESIGN (ADDED WITHOUT CHANGING CODE) */
-/* ------------------------------------------- */
-
-/* Tablet Screens */
-@media screen and (max-width: 1024px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
+/* Make sure mobile devices show desktop layout */
+@media screen and (max-width: 768px) {
     nav ul {
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    nav ul li {
+        margin: 10px;
     }
 
     .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-text, .about-image {
-        max-width: 100%;
+        flex-direction: row; /* Keep elements side by side */
     }
 
     .services-cards {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap; /* Prevents stacking */
+        overflow-x: auto; /* Enables scrolling if needed */
     }
 
     .card, .card2 {
-        width: 45%;
-        margin-bottom: 20px;
+        width: 30%; /* Keep same size as desktop */
+        min-width: 250px; /* Prevents shrinking */
     }
 }
 
-/* Mobile Screens */
-@media screen and (max-width: 768px) {
+/* Ensure proper scaling on ultra-small devices */
+@media screen and (max-width: 480px) {
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .hero h2 {
@@ -239,49 +224,12 @@ html {
         font-size: 1rem;
     }
 
-    .buttons a {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-    .about-image img {
-        width: 80%;
-    }
-
-    .services-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .card, .card2 {
-        width: 90%;
+        width: 45%; /* Adjust size for smaller screens */
     }
 }
 
-/* Small Mobile Screens */
-@media screen and (max-width: 480px) {
-    .hero {
-        padding: 80px 10px;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero h2 {
-        font-size: 1.3rem;
-    }
-
-    .buttons a {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-
-    .card, .card2 {
-        width: 100%;
-    }
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
