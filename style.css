@@ -28,6 +28,11 @@ nav ul li {
     margin-left: 20px;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #0073FF, #0060D6);
@@ -50,18 +55,53 @@ nav ul li {
     font-size: 1.1rem;
 }
 
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons a {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #FFAA00;
+}
+
+.btn-secondary {
+    background-color: #FFAA00;
+}
+
 /* About Section */
 .about {
     padding: 50px;
     background-color: #f9f9f9;
 }
 
+.about h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.about p {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.about img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Flexbox layout for the container */
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    flex-wrap: nowrap;
 }
 
 .about-text {
@@ -74,15 +114,6 @@ nav ul li {
     max-width: 40%;
 }
 
-/* Auto-resizing About image */
-.about-image img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
 /* Services Section */
 .services {
     padding: 50px;
@@ -90,45 +121,135 @@ nav ul li {
     text-align: center;
 }
 
+.services h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.services p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
 .services-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
-/* Cards remain same size */
+/* Service Cards */
 .card, .card2 {
     background-color: white;
-    width: 30%;
-    text-align: center;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Service images stay same size */
 .card img, .card2 img {
-    width: auto;
-    max-width: 100%;
-    height: 100px; /* Same height for all service images */
-    object-fit: contain;
+    width: 50px;
     margin-bottom: 20px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+.card h3, .card2 h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card p, .card2 p {
+    font-size: 1rem;
+    color: #666;
+    margin: 15px 0;
+}
+
+.card a, .card2 a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.card:hover, .card2:hover {
+    transform: translateY(-10px);
+    background-color: #83b9f7;
+}
+
+.card a:hover, .card2 a:hover {
+    color: #FFAA00;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ------------------------------------------- */
+/* RESPONSIVE DESIGN (ADDED WITHOUT CHANGING CODE) */
+/* ------------------------------------------- */
+
+/* Tablet Screens */
+@media screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .container {
         flex-direction: column;
         text-align: center;
     }
 
-    .about-text {
+    .about-text, .about-image {
         max-width: 100%;
     }
 
-    .about-image {
-        max-width: 100%;
+    .services-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card, .card2 {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .buttons a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .about-image img {
+        width: 80%;
     }
 
     .services-cards {
@@ -137,7 +258,30 @@ nav ul li {
     }
 
     .card, .card2 {
-        width: 80%;
-        margin-bottom: 20px;
+        width: 90%;
+    }
+}
+
+/* Small Mobile Screens */
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 80px 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+
+    .buttons a {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .card, .card2 {
+        width: 100%;
     }
 }
