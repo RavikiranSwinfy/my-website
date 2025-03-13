@@ -96,20 +96,22 @@ nav ul li {
     justify-content: space-between;
 }
 
-.card {
+/* Cards remain same size */
+.card, .card2 {
     background-color: white;
     width: 30%;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Auto-resizing images inside cards */
-.card img {
-    width: 100%;
-    height: auto;
-    max-height: 150px;
+/* Service images stay same size */
+.card img, .card2 img {
+    width: auto;
+    max-width: 100%;
+    height: 100px; /* Same height for all service images */
     object-fit: contain;
     margin-bottom: 20px;
 }
@@ -134,7 +136,7 @@ nav ul li {
         align-items: center;
     }
 
-    .card {
+    .card, .card2 {
         width: 80%;
         margin-bottom: 20px;
     }
