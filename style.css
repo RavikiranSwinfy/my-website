@@ -313,8 +313,19 @@ html {
 }
 
 .partner {
+    width: 200px; /* Rectangle width */
+    height: 50px; /* Rectangle height */
+    background-color: #f5f2d3; /* Light background color for the box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #ddd; /* Border around the rectangle */
+    border-radius: 8px; /* Slightly rounded corners */
+    padding: 20px; /* Internal padding */
     font-size: 1.3rem;
     color: #333;
+    font-weight: bold; /* Bold font */
     transition: transform 0.3s ease;
 }
 
@@ -384,5 +395,117 @@ html {
 
     .card, .card2 {
         width: 90%;
+    }
+/* Testimonial Section */
+.testimonials {
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.6); /* Initially transparent background */
+    text-align: center;
+    transition: background-color 0.6s ease-in-out; /* Smooth background fade effect */
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.testimonial h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* For mobile view */
+@media screen and (max-width: 768px) {
+    .testimonial {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .testimonial {
+        width: 100%;
+    }
+}
+}/* Testimonial Section */
+.testimonials {
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0); /* Fully transparent initially */
+    text-align: center;
+    transition: background-color 0.6s ease-in-out; /* Smooth background fade effect */
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center; /* Center-align testimonials */
+    flex-wrap: wrap;
+    gap: 30px; /* Spacing between testimonials */
+}
+
+.testimonial {
+    background-color: rgb(238, 249, 236);
+    padding: 30px;
+    max-width: 30%;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    border-radius: 15px; /* More rounded corners for a modern look */
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.testimonial h3 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .testimonial {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .testimonial {
+        max-width: 100%;
     }
 }
